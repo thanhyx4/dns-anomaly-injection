@@ -115,5 +115,10 @@ dmypy.json
 .pyre/
 
 # Joaco Things
-input/
-output/
+
+dnsFloodNXDOMAIN/input/*.pcap
+dnsFloodNXDOMAIN/input/*.gz
+
+dnsFloodNXDOMAIN/output/*.gp
+dnsFloodNXDOMAIN/output/*.pcap.gz
+dnsFloodNXDOMAIN/output/*.pcap
