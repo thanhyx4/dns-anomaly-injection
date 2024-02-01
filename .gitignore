@@ -118,7 +118,9 @@ dmypy.json
 
 dnsFloodNXDOMAIN/input/*.pcap
 dnsFloodNXDOMAIN/input/*.gz
-
 dnsFloodNXDOMAIN/output/*.gp
 dnsFloodNXDOMAIN/output/*.pcap.gz
 dnsFloodNXDOMAIN/output/*.pcap
+
+Amplificacion/input/*
+Amplificacion/output/*

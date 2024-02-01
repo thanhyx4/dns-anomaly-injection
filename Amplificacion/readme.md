@@ -1,29 +1,38 @@
-parser.add_argument('-p', '--packets_per_window', help='Server tolerance, packets per unit of time that the server can answer, default:100', type=int, default=100)
+Server tolerance, packets per unit of time that the server can answer, default:100, type=int:
+- '-p', '--packets_per_window', 
+
+Fraction of time for server tolerance, default: 0.01, type=float:
+- '-w', '--window_size',
+
+Server ip, default: 203.119.73.80
+- '-s', '--server_ip'
+
+Source port of the queries, default:21517, type=int.
+- '-sp', '--source_port', 
+
+Duration of the attack (seconds), default: 300 sec.
+- '-d', '--duration',
+
+Amount of packets per second per zombie, default: 1200', type=int, default=1200)
+- '-n', '--num_packets'
+
+Initial time of the attack, default:0', type=float, default=0)
+- '-it', '--initial_time'
+
+Response type, true:amplified response, false:normal response. Default: false', action='store_true')
+- '-rtype', '--response_type'
+
+Number of computers in the botnet for the DDoS attack, default:1
+- '-z', '--zombies'
+
+Required arguments
     
-parser.add_argument('-w', '--window_size', help= 'Fraction of time for server tolerance, default: 0.01', type=float, default=0.01)
+- '-i', '--input_file', help='Path to the input file.', required=True)
     
-parser.add_argument('-s', '--server_ip', help = 'Server ip, default: 200.7.4.7', default='200.7.4.7')
-
-    parser.add_argument('-sp', '--source_port', help = 'Source port, default:21517', type= int, default=21517)
-
-    parser.add_argument('-d', '--duration', help = ' Duration of the attack (seconds), default: 300 sec.', type=int, default=300)
-
-    parser.add_argument('-n', '--num_packets', help= 'Amount of packets per second per zombie, default: 1200', type=int, default=1200)
-
-    parser.add_argument('-it', '--initial_time', help = 'Initial time of the attack, default:0', type=float, default=0)
-
-    parser.add_argument('-rtype', '--response_type', help='Response type, true:amplified response, false:normal response. Default: false', action='store_true')
-
-    parser.add_argument('-z', '--zombies', help='Number of computers in the botnet for the DDoS attack, default:1', type=int, default = 1)
-
-requiredNamed = parser.add_argument_group('Required arguments')
+- '-o','--output_file', help='Path to the output file.',required=True)
     
-    requiredNamed.add_argument('-i', '--input_file', help='Path to the input file.', required=True)
+- '-target', '--target_ip', help= 'Target ip', required=True)
     
-    requiredNamed.add_argument('-o','--output_file', help='Path to the output file.',required=True)
-    
-    requiredNamed.add_argument('-target', '--target_ip', help= 'Target ip', required=True)
-    
-    requiredNamed.add_argument('-dom','--domain', help= 'Asked domain, ex: "niclabs.cl"', required=True)
+- '-dom','--domain', help= 'Asked domain, ex: "niclabs.cl"', required=True)
 
 Set up attack
