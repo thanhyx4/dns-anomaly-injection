@@ -116,11 +116,20 @@ dmypy.json
 
 # Joaco Things
 
-dnsFloodNXDOMAIN/input/*.pcap
-dnsFloodNXDOMAIN/input/*.gz
-dnsFloodNXDOMAIN/output/*.gp
-dnsFloodNXDOMAIN/output/*.pcap.gz
-dnsFloodNXDOMAIN/output/*.pcap
+dnsFloodNXDOMAIN/input/*
+#dnsFloodNXDOMAIN/input/*.gz
+#dnsFloodNXDOMAIN/output/*
+#dnsFloodNXDOMAIN/output/*.pcap.gz
+dnsFloodNXDOMAIN/output/*
 
 Amplificacion/input/*
 Amplificacion/output/*
+
+UDP\ Floods/input/*
+UDP\ Floods/output/*
+
+tcpSynFlood/input/*
+tcpSynFlood/output/*
+
+Port Scanning/input/*
+Port Scanning/output/*

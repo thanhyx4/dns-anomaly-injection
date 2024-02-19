@@ -7,14 +7,14 @@ class amplificationBuilderTest(unittest.TestCase):
         self.target_ip = "8.8.8.8"
         self.serv_ip = "203.119.73.80"
         self.src_port = 31175
-        self.q_name = "domain.vn."
+        self.q_name = "domain.vn"
         self.ti = 10
         self.request = amplificationBuilder(self.target_ip, self.serv_ip, self.src_port, self.q_name, self.ti)
 
 
     def test_DNS_layer(self):
         self.assertEqual(self.request[DNS].qr, 0, "Is not a request")
-        self.assertEqual(str(self.request[DNSQR].qname), "b'" + self.q_name + "'", "Wrong asked domain")
+        self.assertEqual(str(self.request[DNSQR].qname), "b'" + self.q_name + ".'", "Wrong asked domain")
         self.assertEqual(self.request[DNSRROPT].rclass, 4096, "EDNS0 extension failed")
 
     def test_UDP_layer(self):

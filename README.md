@@ -17,7 +17,7 @@ For running the attack, all the attack have this same input (some optional) vari
 + On the other side, the size of the time window to establish the tolerance of the server is established by the argument --window_size, or either way -w it's the shortcut for this argument. This is measured in seconds and it's default is 0.01
 
 
-+ On a same way, the number of query packets that the server can generate it's responses on the time window defined. This argument is being set by the command -p or --packets_per_window, and the default value is 100 packet per window.
++ On a same way, the number of query packets that the server can generate it's responses on the time window defined. This argument is being set by the command -p or --packets_per_window, and the default value is 100 packet per window (number of packets that server can except).
 
   + For example if the window is 0.001 seconds, and the -p is 10, then it's interpretation is 10 packets per 0.001 seconds.
 

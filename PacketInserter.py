@@ -205,7 +205,12 @@ class PacketInserter:
             wrpcap(outputDirection,PacketList()) #Cleans the pcap output file.
             reader = PcapReader(inputDirection)
             writer = PcapWriter(outputDirection,append=True,sync=True)
-            first = reader.read_packet()
+
+            try:
+                first = reader.read_packet()        #read till the end
+            except EOFError:
+                print("Error file pcap doesnt contain packets")
+                return False
             ti = first.time
             ta = ti
             buffer.append(first)

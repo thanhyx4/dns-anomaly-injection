@@ -41,7 +41,7 @@ class randomSubBuilderTest(unittest.TestCase):
 
     def test_DNS_layer(self):
         self.assertEqual(self.request[DNS].qr, 0, "Is not a request")
-        self.assertEqual(str(self.request[DNSQR].qname), "b'"+ randomSub(self.seed)+"."+self.dom+"'")
+        self.assertEqual(str(self.request[DNSQR].qname), "b'"+ randomSub(self.seed)+"."+self.dom+".'")
 
     def test_UDP_layer(self):
         self.assertEqual(self.request[UDP].sport, self.src_port, "Wrong source port")
