@@ -1,6 +1,7 @@
 #!/bin/bash
 #bash testPcap.sh "./Amplification/output/*.pcap" ./Amplification/output/
 #bash testPcap.sh "./UDP\ Floods/output/*.pcap" "./UDP\ Floods/output/"
+#bash testPcap.sh "./Port\ Scanning/output/*.pcap" "./Port\ Scanning/output/"
 
 COMMAND1="mergecap $1 -w - |dnsanalyzer -w 600  -i 600 -a 8 -p "both" -t 1.2 -P "srcIP" -c 25 -s 32 -g $2 -q  > "$2""anomaly_test.txt" "
 
