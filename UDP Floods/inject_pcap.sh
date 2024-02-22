@@ -6,15 +6,15 @@ OUTPUT="./output/"
 NUM_PACKET=10           #numbers packets per second
 INITIAL_TIME=0
 DURATION=60             #seconds
-ZOMBIES=10
+ZOMBIES=1
 WINDOWS=0.01            #window size
 PPS=42                    #packets per window
 SERVER="117.122.125.80"     #server ip
-
+SourceP=21517
 
 #each time read file -> create different botnets -> consuming time
 #bash inject_pcap.sh "./input/*.pcap"     #must have ""
-
+#required paremeters
 
 for filename in $1; do
     TMP="${OUTPUT}${filename:8:-3}"
@@ -24,7 +24,7 @@ for filename in $1; do
       continue
     fi
     #TMP=$OUTPUT
-	  COMMAND="python3 TCPMain.py -i ${filename} -o ${TMP}  -z 5 -it 60  -d 120 -s "203.119.73.80""
+	  COMMAND="python3 main.py -i ${filename} -o ${TMP}  -z 5 -it 60  -d 120 -s "203.119.73.80""
 	  echo "${COMMAND}"
 	  sh -c "${COMMAND}"
 done

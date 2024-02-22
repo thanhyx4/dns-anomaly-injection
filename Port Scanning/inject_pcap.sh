@@ -3,7 +3,7 @@
 
 INPUT="./input/"    #dns-hdns-02_2024-01-07_00_01.pcap.gz
 OUTPUT="./output/"
-NUM_PACKET=10           #numbers packets per second
+NUM_PACKET=20           #numbers packets per second
 INITIAL_TIME=0
 DURATION=60             #seconds
 ZOMBIES=10
@@ -14,7 +14,9 @@ SERVER="117.122.125.80"     #server ip
 
 #each time read file -> create different botnets -> consuming time
 #bash inject_pcap.sh "./input/*.pcap"     #must have ""
-
+attack1="mainPortScanningDomainAttack.py"
+attack2="mainPortScanningTCP.py"
+attack3="mainPortScanningUDP.py"
 
 for filename in $1; do
     TMP="${OUTPUT}${filename:8:-3}"
@@ -24,7 +26,7 @@ for filename in $1; do
       continue
     fi
     #TMP=$OUTPUT
-	  COMMAND="python3 TCPMain.py -i ${filename} -o ${TMP}  -z 5 -it 60  -d 120 -s "203.119.73.80""
+	  COMMAND="python3 ${attack3} -i ${filename} -o ${TMP}  -z 5 -it 60  -d 120 -n ${NUM_PACKET} -s "203.119.73.80""
 	  echo "${COMMAND}"
 	  sh -c "${COMMAND}"
 done

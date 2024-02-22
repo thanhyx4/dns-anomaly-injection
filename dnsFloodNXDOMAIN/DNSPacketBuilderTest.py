@@ -12,7 +12,7 @@ class DNSPacketBuilderTest(unittest.TestCase):
         self.dstIp = "200.7.4.7"
         self.etherSrc = "18:66:da:4d:c0:08"
         self.etherDst = "18:66:da:e6:36:56"
-        self.domain = "google.cl."
+        self.domain = "google.cl"
         self.idDNS = int(RandShort())
         self.qrIdIp = int(RandShort())
         self.rspIdIp = int(RandShort())
